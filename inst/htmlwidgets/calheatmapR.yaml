@@ -2,7 +2,7 @@ dependencies:
 - name: d3
   version: 3.5.5
   src: htmlwidgets/lib/d3
-  script: d3.js
+  script: d3.min.js
 - name: cal-heatmap
   version: 3.5.2
   src: htmlwidgets/lib/cal-heatmap
