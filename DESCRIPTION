@@ -9,3 +9,6 @@ Description: An R interface to the cal-heatmap Javascript charting library (a
     copy of which is included in the package).
 License: MIT
 LazyData: TRUE
+Imports:
+    magrittr,
+    htmlwidgets (>= 0.3.2),
