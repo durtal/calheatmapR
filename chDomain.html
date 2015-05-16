@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title>chDomain</title>
+
+<script src="libs/jquery-1.11.0/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.1/css/united.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.1/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.1/shim/respond.min.js"></script>
+
+<style type="text/css">
+
+	/* padding for bootstrap navbar */
+	body {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	@media (max-width: 979px) {
+		body {
+			padding-top: 0;
+		}
+	}
+
+	/* offset scroll position for anchor links (for fixed navbar) */
+	@media (min-width: 980px) {
+		.section h2 {
+			padding-top: 52px;
+			margin-top: -52px;
+		}
+		.section h3 {
+			padding-top: 52px;
+			margin-top: -52px;
+		}
+	}
+
+	p {
+		font-size: 13px;
+	}
+
+	/* don't use link color in navbar */
+	.dropdown-menu>li>a {
+		color: black;
+	}
+
+	/* some padding for disqus */
+	#disqus_thread {
+		margin-top: 45px;
+	}
+
+</style>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img { 
+  max-width:100%; 
+  height: auto; 
+}
+</style>
+<div class="container-fluid main-container">
+
+<h1>calheatmapR</h1>
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="http://durtal.github.io/">durtal.github.io</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="index.html">calheatmapR home</a>
+				</li>
+				<li>
+					<a href="calheatmapR.html">calheatmapR</a>
+				</li>
+				<li>
+				    <a href="data.html">data</a>
+				</li>
+				<li>
+				    <a href="chDomain.html">chDomain</a>
+				</li>
+				<li>
+				    <a href="chLegend.html">chLegend</a>
+				</li>
+				<li>
+				    <a href="chLabel.html">chLabel</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div id="header">
+<h1 class="title">chDomain</h1>
+</div>
+
+
+<p>Allows customisation of the domain elements in a calendar heatmap.</p>
+<div id="usage" class="section level3">
+<h3>Usage</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">calheatmapR</span>(<span class="dt">data =</span> demoData) %&gt;%
+<span class="st">    </span><span class="kw">chDomain</span>(<span class="dt">domain =</span> <span class="st">&quot;hour&quot;</span>, <span class="dt">subDomain =</span> <span class="st">&quot;min&quot;</span>, <span class="dt">range =</span> <span class="dv">10</span>)</code></pre>
+</div>
+<div id="arguments" class="section level3">
+<h3>Arguments</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">argument</th>
+<th align="left">details</th>
+<th align="left">cal-heatmap equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">calheatmapR</td>
+<td align="left">a calendar heatmap returned by <code>calheatmapR</code></td>
+</tr>
+<tr class="even">
+<td align="left">domain</td>
+<td align="left">type of domain</td>
+<td align="left"><a href="https://kamisama.github.io/cal-heatmap/#domain">domain</a></td>
+</tr>
+<tr class="odd">
+<td align="left">subDomain</td>
+<td align="left">type of subDomain</td>
+<td align="left"><a href="https://kamisama.github.io/cal-heatmap/#subDomain">subDomain</a></td>
+</tr>
+<tr class="even">
+<td align="left">start</td>
+<td align="left">Date, in format YYYY-MM-DD</td>
+<td align="left"><a href="https://kamisama.github.io/cal-heatmap/#start">start</a></td>
+</tr>
+<tr class="odd">
+<td align="left">range</td>
+<td align="left">number of domains to display</td>
+<td align="left"><a href="https://kamisama.github.io/cal-heatmap/#range">range</a></td>
+</tr>
+<tr class="even">
+<td align="left">cellSize</td>
+<td align="left">size of each domain (in pixels)</td>
+<td align="left"><a href="https://kamisama.github.io/cal-heatmap/#cellSize">cellSize</a></td>
+</tr>
+<tr class="odd">
+<td align="left">cellPadding</td>
+<td align="left">space between each subDomain (pixels)</td>
+<td align="left"><a href="https://kamisama.github.io/cal-heatmap/#cellPadding">cellPadding</a></td>
+</tr>
+<tr class="even">
+<td align="left">cellRadius</td>
+<td align="left">border radius of subDomain cells, for round corners (pixels)</td>
+<td align="left"><a href="https://kamisama.github.io/cal-heatmap/#cellRadius">cellRadius</a></td>
+</tr>
+<tr class="odd">
+<td align="left">gutter</td>
+<td align="left">space between each domain</td>
+<td align="left"><a href="https://kamisama.github.io/cal-heatmap/#domainGutter">domainGutter</a></td>
+</tr>
+<tr class="even">
+<td align="left">margin</td>
+<td align="left">margins around each domain</td>
+<td align="left"><a href="https://kamisama.github.io/cal-heatmap/#domainMargin">domainMargin</a></td>
+</tr>
+<tr class="odd">
+<td align="left">colLimit</td>
+<td align="left">number of columns to split domains into</td>
+<td align="left"><a href="https://kamisama.github.io/cal-heatmap/#colLimit">colLimit</a></td>
+</tr>
+<tr class="even">
+<td align="left">rowLimit</td>
+<td align="left">number of rows to split domains into</td>
+<td align="left"><a href="https://kamisama.github.io/cal-heatmap/#rowLimit">rowLimit</a></td>
+</tr>
+<tr class="odd">
+<td align="left">dynamicDimension</td>
+<td align="left">dynamic width and height of domains</td>
+<td align="left"><a href="https://kamisama.github.io/cal-heatmap/#domainDynamicDimension">domainDynamicDimension</a></td>
+</tr>
+<tr class="even">
+<td align="left">verticalOrientation</td>
+<td align="left">display calendar heatmap vertically</td>
+<td align="left"><a href="https://kamisama.github.io/cal-heatmap/#verticalOrientation">verticalOrientation</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="examples" class="section level3">
+<h3>Examples</h3>
+<p>For this example we’ll use the example data set included in the package which tracks the performance of a jockey across 3 months, it charts the percentage of horses he beat in each of the races he rode in.</p>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+
+</body>
+</html>

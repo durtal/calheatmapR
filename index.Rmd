@@ -1,0 +1,20 @@
+---
+title: 'calheatmapR'
+---
+
+The `calheatmapR` package is an R interface to the [cal-heatmap](https://kamisama.github.io/cal-heatmap/) Javascript charting library, used to create calendar heatmaps to visualise time series data.  The package is a work in progress and can replicate some of the more basic elements of the Javascript library.
+
+These help pages walk through the use of the functions, which are hopefully quite simple to use, but it is worth paying attention to the [Data](data.html) page, which explains the required format of the data in order to be plotted.  The primary function [`calheatmapR`](calheatmapR.html) just loads data and plots using the defaults set in the Javascript library.  There are three other functions that allow customisation of the calendar heatmap, these functions follow a similar pattern to those found in the [dygraphs](https://rstudio.github.io/dygraphs/index.html) htmlwidget.  [`chDomain`](chDomain.html) customises elements to do with the domains (ie. time periods) and the domain style, [`chLabel`](chLabel.html) customises the labels on the plot, and [`chLegend`](chLegend.html) customises the Legend.  
+
+The three functions do not cover everything found in the Javascript library, they cover the vast majority of [Options](http://kamisama.github.io/cal-heatmap/#options).  What is not found in this package (at the moment) are the [Methods](kamisama.github.io/cal-heatmap/#methods) and [Events](kamisama.github.io/cal-heatmap/#methods) sections on the cal-heatmap homepage.
+
+The package owes everything to the [`htmlwidgets`](http://www.htmlwidgets.org/) package, developed by [Ramnath Vaidyanathan](https://github.com/ramnathv) and [JJ Allaire](https://github.com/jjallaire) (and RStudio).  And a word to [timelyportfolio](https://github.com/timelyportfolio) who has built numerous htmlwidgets, and in part (along with Ramnath and JJ) inspired me to try build this package, be sure to check out the [buildwidgets](http://www.buildingwidgets.com/) site.
+
+The default plot is shown below:
+
+![](default-cal-heatmap.jpg)
+
+```{r echo=FALSE}
+library(calheatmapR)
+calheatmapR(data = list(), height = "200px")
+```

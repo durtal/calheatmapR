@@ -1,0 +1,42 @@
+---
+title: 'chDomain'
+---
+```{r echo=FALSE}
+library(calheatmapR)
+```
+
+Allows customisation of the domain elements in a calendar heatmap.
+
+### Usage
+
+```{r eval=FALSE}
+calheatmapR(data = demoData) %>%
+    chDomain(domain = "hour", subDomain = "min", range = 10)
+```
+
+### Arguments
+
+argument | details | cal-heatmap equivalent
+---------|------|---------|---------|--------
+calheatmapR | a calendar heatmap returned by `calheatmapR` |
+domain | type of domain | [domain](https://kamisama.github.io/cal-heatmap/#domain)
+subDomain | type of subDomain | [subDomain](https://kamisama.github.io/cal-heatmap/#subDomain)
+start | Date, in format YYYY-MM-DD | [start](https://kamisama.github.io/cal-heatmap/#start)
+range | number of domains to display | [range](https://kamisama.github.io/cal-heatmap/#range)
+cellSize | size of each domain (in pixels) | [cellSize](https://kamisama.github.io/cal-heatmap/#cellSize)
+cellPadding | space between each subDomain (pixels) | [cellPadding](https://kamisama.github.io/cal-heatmap/#cellPadding)
+cellRadius | border radius of subDomain cells, for round corners (pixels) | [cellRadius](https://kamisama.github.io/cal-heatmap/#cellRadius)
+gutter | space between each domain | [domainGutter](https://kamisama.github.io/cal-heatmap/#domainGutter)
+margin | margins around each domain | [domainMargin](https://kamisama.github.io/cal-heatmap/#domainMargin)
+colLimit | number of columns to split domains into | [colLimit](https://kamisama.github.io/cal-heatmap/#colLimit)
+rowLimit | number of rows to split domains into | [rowLimit](https://kamisama.github.io/cal-heatmap/#rowLimit)
+dynamicDimension | dynamic width and height of domains | [domainDynamicDimension](https://kamisama.github.io/cal-heatmap/#domainDynamicDimension)
+verticalOrientation | display calendar heatmap vertically | [verticalOrientation](https://kamisama.github.io/cal-heatmap/#verticalOrientation)
+
+### Examples
+
+For this example we'll use the example data set included in the package which tracks the performance of a jockey across 3 months, it charts the percentage of horses he beat in each of the races he rode in.
+
+```{r}
+
+```
