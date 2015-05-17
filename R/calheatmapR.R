@@ -49,3 +49,14 @@ renderCalheatmapR <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) { expr <- substitute(expr) } # force quoted
   shinyRenderWidget(expr, calheatmapROutput, env, quoted = TRUE)
 }
+
+#' Todd Pletcher racehorse trainer performance
+#'
+#' List containing data about racehorse trainer Todd Pletcher, tracking the
+#' percentage of horses his horses beat in races they entered, over a 3month
+#' period
+#'
+#' @docType data
+#' @keywords dataset
+#' @name pletcher
+NULL
