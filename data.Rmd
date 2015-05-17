@@ -1,3 +1,32 @@
 ---
 title: 'data'
 ---
+
+```{r echo=FALSE}
+library(calheatmapR)
+```
+
+The **pletcher** dataset is an example of the required format for the [`calheatmapR`](calheatmapR.html) function.
+
+```{r}
+data(pletcher)
+head(pletcher, 3)
+```
+
+The names of the object are timestamps (in seconds), eg `r names(pletcher)[1]` which is `r as.POSIXct(as.numeric(names(pletcher)[1]), origin = "1970-01-01")`.  To create timestamps in R, convert `POSIXct` class into numeric:
+
+```{r}
+(timestamp <- as.POSIXct("2000-01-01") %>% as.numeric())
+```
+
+To convert a timestamp back to a Date (`POSIXct`) (if using names from a list, as seen in the `pletcher` dataset, they will first need converting from character into numeric.
+
+```{r}
+timestamp %>% as.POSIXct(origin = "1970-01-01")
+```
+
+So the first value in the `pletcher` dataset is. (Going a step further and converting the Date into a character, this can then be used as the parameter for the `start` argument in the [`chDomain`](chDomain.html) function).
+
+```{r}
+names(pletcher)[1] %>% as.numeric %>% as.POSIXct(origin = "1970-01-01")
+```

@@ -61,6 +61,32 @@
 </style>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
 
 
 </head>
@@ -127,7 +153,26 @@ img {
 </div>
 
 
-
+<p>The <strong>pletcher</strong> dataset is an example of the required format for the <a href="calheatmapR.html"><code>calheatmapR</code></a> function.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(pletcher)
+<span class="kw">head</span>(pletcher, <span class="dv">3</span>)</code></pre>
+<pre><code>## $`1354406400`
+## [1] 70
+## 
+## $`1354752000`
+## [1] 100
+## 
+## $`1354924800`
+## [1] 77</code></pre>
+<p>The names of the object are timestamps (in seconds), eg 1354406400 which is 2012-12-02. To create timestamps in R, convert <code>POSIXct</code> class into numeric:</p>
+<pre class="sourceCode r"><code class="sourceCode r">(timestamp &lt;-<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="st">&quot;2000-01-01&quot;</span>) %&gt;%<span class="st"> </span><span class="kw">as.numeric</span>())</code></pre>
+<pre><code>## [1] 946684800</code></pre>
+<p>To convert a timestamp back to a Date (<code>POSIXct</code>) (if using names from a list, as seen in the <code>pletcher</code> dataset, they will first need converting from character into numeric.</p>
+<pre class="sourceCode r"><code class="sourceCode r">timestamp %&gt;%<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="dt">origin =</span> <span class="st">&quot;1970-01-01&quot;</span>)</code></pre>
+<pre><code>## [1] &quot;2000-01-01 GMT&quot;</code></pre>
+<p>So the first value in the <code>pletcher</code> dataset is. (Going a step further and converting the Date into a character, this can then be used as the parameter for the <code>start</code> argument in the <a href="chDomain.html"><code>chDomain</code></a> function).</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(pletcher)[<span class="dv">1</span>] %&gt;%<span class="st"> </span>as.numeric %&gt;%<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="dt">origin =</span> <span class="st">&quot;1970-01-01&quot;</span>)</code></pre>
+<pre><code>## [1] &quot;2012-12-02 GMT&quot;</code></pre>
 
 
 </div>

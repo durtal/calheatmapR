@@ -1,3 +1,71 @@
 ---
 title: 'chLabel'
 ---
+```{r echo=FALSE}
+library(calheatmapR)
+```
+
+Allows customisation of the Label elements, including item names, in a calendar heatmap.
+
+### Usage
+
+```{r eval=FALSE}
+calheatmapR(data = pletcher) %>%
+    chLabel(position = "top", itemName = "items")
+```
+
+### Arguments
+
+argument | details | cal-heatmap equivalent
+---------|---------|-----------------------
+calheatmapR | a calendar heatmap returned by `calheatmapR` |
+position | position of the label, with respect to the domain | [label.position](http://kamisama.github.io/cal-heatmap/#label)
+align | alignment of the label, with respect to the domain | [label.align](http://kamisama.github.io/cal-heatmap/#label)
+rotate | rotation for vertical label, default is NULL, but accepts "left" or "right" | [label.rotate](http://kamisama.github.io/cal-heatmap/#label)
+width | applied when label is rotated, defines width of label | [label.width](http://kamisama.github.io/cal-heatmap/#label)
+offset | additional control for label positioning | [label.offset](http://kamisama.github.io/cal-heatmap/#label)
+height | height of the domain label (in pixels) | [label.height](http://kamisama.github.io/cal-heatmap/#label)
+itemName | name of entity on calendar being presented | [itemName](http://kamisama.github.io/cal-heatmap/#itemName)
+
+### Examples
+
+The `pletcher` data set is used again, along with the [`chDomain`](chDomain.html) function to customise the domain.  First a look at a calendar heatmap without any Label customisation:
+
+```{r}
+data(pletcher)
+
+calheatmapR(data = pletcher, height = "100%") %>%
+    chDomain(domain = "month",
+             subDomain = "day",
+             start = "2012-11-01",
+             range = 5)
+```
+
+Now to customise the label, and itemNames (used in tooltip when hovering over a subDomain).
+
+```{r}
+calheatmapR(data = pletcher, height = "100%") %>%
+    chDomain(domain = "month",
+             subDomain = "day",
+             start = "2012-11-01",
+             range = 5) %>%
+    chLabel(position = "right", rotate = "right", align = "left", width = 20, itemName = "% horses beaten")
+```
+
+Combining the code found in the example of [`chLegend`](chLegend.html) we can achieve a smart plot
+
+```{r}
+calheatmapR(data = pletcher, height = "100%") %>%
+    chDomain(domain = "month",
+             subDomain = "day",
+             start = "2012-11-01",
+             range = 5) %>%
+    chLegend(legend = seq(10, 90, 10),
+             colours = list(min = "#D8D8D8", max = "#D9220F", empty = "#424242"), 
+             cellSize = 15, 
+             cellPadding = 5) %>%
+    chLabel(position = "right",
+            rotate = "right",
+            align = "left",
+            width = 20,itemName = "% horses beaten")
+```

@@ -1,3 +1,38 @@
 ---
 title: 'calheatmapR'
 ---
+
+```{r echo=FALSE}
+library(calheatmapR)
+```
+
+Initialises a calendar heatmap that uses all default values.
+
+### Usage
+
+```{r eval=FALSE}
+calheatmapR(data = pletcher)
+```
+
+### Arguments
+
+argument | details | cal-heatmap equivalent
+---------|---------|-----------------------
+data | list, each element is a number, with a timestamp for a name | [dataFormat](http://kamisama.github.io/cal-heatmap/#data-format)
+width | element width |
+height | element height |
+
+### Examples
+
+Passing an empty list to `calheatmapR` will create a default cal-heatmap. (As you can see the height argument need work, as it creates an element that is far larger than necessary.)
+
+```{r}
+calheatmapR(data = list())
+```
+
+If we add data to the function, such as the example data included in the package, called `pletcher` (see [data](data.html)), we still get the default plot, we need to customise the plot using customisation functions [`chDomain`](chDomain.html), [`chLabel`](chLabel.html) and [`chLegend`](chLegend.html)
+
+```{r}
+data(pletcher)
+calheatmapR(data = pletcher, width = "100%", height = "100%")
+```

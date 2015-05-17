@@ -10,14 +10,14 @@ Allows customisation of the domain elements in a calendar heatmap.
 ### Usage
 
 ```{r eval=FALSE}
-calheatmapR(data = demoData) %>%
+calheatmapR(data = pletcher) %>%
     chDomain(domain = "hour", subDomain = "min", range = 10)
 ```
 
 ### Arguments
 
 argument | details | cal-heatmap equivalent
----------|------|---------|---------|--------
+---------|---------|-----------------------
 calheatmapR | a calendar heatmap returned by `calheatmapR` |
 domain | type of domain | [domain](https://kamisama.github.io/cal-heatmap/#domain)
 subDomain | type of subDomain | [subDomain](https://kamisama.github.io/cal-heatmap/#subDomain)
@@ -35,8 +35,26 @@ verticalOrientation | display calendar heatmap vertically | [verticalOrientation
 
 ### Examples
 
-For this example we'll use the example data set included in the package which tracks the performance of a jockey across 3 months, it charts the percentage of horses he beat in each of the races he rode in.
+For this example we'll use the example data set included in the package which tracks the performance of racehorse trainer Todd Pletcher, it charts the percentage of horses his horses beat in races at Gulfstream Park.  (see [data](data.html) for details about the required data format).
 
 ```{r}
+data(pletcher)
 
+calheatmapR(data = pletcher, height = "100%") %>%
+    chDomain(domain = "month",
+             subDomain = "day",
+             start = "2012-11-01")
+```
+
+Looking at implementing a few other options
+
+```{r}
+calheatmapR(data = pletcher, height = "100%") %>%
+    chDomain(domain = "month",
+             subDomain = "day",
+             start = "2012-11-01",
+             range = 5,
+             cellSize = 18,
+             cellRadius = 20,
+             verticalOrientation = TRUE)
 ```

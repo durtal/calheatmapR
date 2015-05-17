@@ -1,3 +1,59 @@
 ---
 title: 'chLegend'
 ---
+```{r echo=FALSE}
+library(calheatmapR)
+```
+
+Allows customisation of the Legend elements, including colour scale, in a calendar heatmap.
+
+### Usage
+
+```{r eval=FALSE}
+calheatmapR(data = pletcher) %>%
+    chLegend(legend = c(10, 20, 30, 40, 50, 60), 
+             colours = list(min = "#D8D8D8", max = "#D9220F"))
+```
+
+### Arguments
+
+argument | details | cal-heatmap equivalent
+---------|---------|-----------------------
+calheatmapR | a calendar heatmap returned by `calheatmapR` |
+legend | numeric vector, assigns each range of values to a colour | [legend](http://kamisama.github.io/cal-heatmap/#legend)
+display | whether to display the legend | [displayLegend](http://kamisama.github.io/cal-heatmap/#displayLegend)
+cellSize | size of legend cells (in pixels) | [legendCellSize](http://kamisama.github.io/cal-heatmap/#legendCellSize)
+cellPadding | padding between each legend cell (in pixels) | [legendCellPadding](http://kamisama.github.io/cal-heatmap/#legendCellPadding)
+margin | margin around each legend cell | [legendMargin](http://kamisama.github.io/cal-heatmap/#legendMargin)
+verticalPosition | vertical position of the legend | [legendVerticalPosition](http://kamisama.github.io/cal-heatmap/#legendVerticalPosition)
+horizontalPosition | horizontal position of the legend | [legendHorizontalPosition](http://kamisama.github.io/cal-heatmap/#legendHorizontalPosition)
+orientation | orientation of the legend | [legendOrientation](http://kamisama.github.io/cal-heatmap/#legendOrientation)
+colours | set of colours to compute heatmap colours, either a vector or a list.  List would contain 'min' and 'max' elements with optional elements of 'empty', 'base' and 'overflow' | [legendColors](http://kamisama.github.io/cal-heatmap/#legendColors)
+
+### Examples
+
+The `pletcher` data set is used again, along with the [`chDomain`](chDomain.html) function to customise the domain.  First a look at a calendar heatmap without any Legend customisation:
+
+```{r}
+data(pletcher)
+
+calheatmapR(data = pletcher, height = "100%") %>%
+    chDomain(domain = "month",
+             subDomain = "day",
+             start = "2012-11-01",
+             range = 5)
+```
+
+Now to customise the legend, and the colours.  As our values in the dataset are percentages we want the scale to go from 10 to 90 (cal-heatmap will add 'less than 10' and 'more than 90' values), we'll also make the legend a little larger.
+
+```{r}
+calheatmapR(data = pletcher, height = "100%") %>%
+    chDomain(domain = "month",
+             subDomain = "day",
+             start = "2012-11-01",
+             range = 5) %>%
+    chLegend(legend = seq(10, 90, 10),
+             colours = list(min = "#D8D8D8", max = "#D9220F", empty = "#424242"), 
+             cellSize = 15, 
+             cellPadding = 5)
+```
