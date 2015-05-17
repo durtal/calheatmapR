@@ -6,11 +6,8 @@
 #' @param data a list object, each element's name is a timestamp in seconds, with
 #' a corresponding number, see \href{http://kamisama.github.io/cal-heatmap/#data-format}{here}
 #' for details.
-#' @param attrs a list object containing various options for altering the output
-#' of the calendar heatmap, see \href{http://kamisama.github.io/cal-heatmap/}{here}
-#' for available options.  Not all options are available, so the function
-#' \link{calheatmap_attrs} will create a list of defaults, that can then be altered by
-#' the user.
+#' @param width width of element
+#' @param height height of element
 #'
 #' @import htmlwidgets
 #'

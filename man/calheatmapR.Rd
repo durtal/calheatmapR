@@ -15,11 +15,9 @@ calheatmapR(data, width = NULL, height = NULL)
 a corresponding number, see \href{http://kamisama.github.io/cal-heatmap/#data-format}{here}
 for details.}
 
-\item{attrs}{a list object containing various options for altering the output
-of the calendar heatmap, see \href{http://kamisama.github.io/cal-heatmap/}{here}
-for available options.  Not all options are available, so the function
-\link{calheatmap_attrs} will create a list of defaults, that can then be altered by
-the user.}
+\item{width}{width of element}
+
+\item{height}{height of element}
 }
 \description{
 R interface to interactive plotting using the
