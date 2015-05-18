@@ -7,6 +7,8 @@ The `calheatmapR` package is (a work in progress) an R interface for the [cal-he
 
 The package owes everything to the creators of the R package [`htmlwidgets`](http://www.htmlwidgets.org/) ([repo](https://github.com/ramnathv/htmlwidgets)), Ramnath Vaidyanathan and JJ Alaire, as well as the RStudio team.  And to [@timelyportfolio](https://twitter.com/timelyportfolio) who has created a huge amount of htmlwidgets, be sure to check out his site [buildingwidgets](http://www.buildingwidgets.com/).  This is my first htmlwidget package and at the moment it is a bit limited and doesn't replicate everything that the Javascript library does, see the To Do section below.
 
+Help pages can be found [here](http://durtal.github.io/calheatmapR/), as mentioned in those pages, I am unsure how a calheatmapR plot will work in a shiny app in which the data is updated.
+
 ### Installation
 
 The `calheatmapR` package is only available on github, so to install you will need the `devtools` package installed
@@ -36,7 +38,7 @@ The following two lines shows how to calculate a timestamp in R, it is perhaps a
 as.POSIXct("2001-01-01")
 [1] "2001-01-01 GMT"
 
-unclass(as.POSIXct("2001-01-01"))[1]
+as.numeric(as.POSIXct("2001-01-01"))
 [1] 978307200
 ```
 
@@ -44,7 +46,7 @@ Therefore to create the list from above:
 
 ```R
 demoData = list(1, 10, 100)
-names(demoData) <- c(unclass(as.POSIXct("2001-01-01"))[1], unclass(as.POSIXct("2001-01-02"))[1], unclass(as.POSIXct("2001-01-03"))[1])
+names(demoData) <- c(as.numeric(as.POSIXct("2001-01-01")), as.numeric(as.POSIXct("2001-01-02")), as.numeric(as.POSIXct("2001-01-03")))
 ```
 
 ### Usage
