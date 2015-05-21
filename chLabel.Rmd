@@ -49,7 +49,11 @@ calheatmapR(data = pletcher, height = "100%") %>%
              subDomain = "day",
              start = "2012-11-01",
              range = 5) %>%
-    chLabel(position = "right", rotate = "right", align = "left", width = 20, itemName = "% horses beaten")
+    chLabel(position = "right",
+            rotate = "right",
+            align = "left",
+            width = 20,
+            itemName = "% horses beaten")
 ```
 
 Combining the code found in the example of [`chLegend`](chLegend.html) we can achieve a smart plot
@@ -61,11 +65,14 @@ calheatmapR(data = pletcher, height = "100%") %>%
              start = "2012-11-01",
              range = 5) %>%
     chLegend(legend = seq(10, 90, 10),
-             colours = list(min = "#D8D8D8", max = "#D9220F", empty = "#424242"), 
-             cellSize = 15, 
+             colours = list(min = "#D8D8D8",
+                            max = "#D9220F",
+                            empty = "#424242"),
+             cellSize = 15,
              cellPadding = 5) %>%
     chLabel(position = "right",
             rotate = "right",
             align = "left",
-            width = 20,itemName = "% horses beaten")
+            width = 20,
+            itemName = "% horses beaten")
 ```
