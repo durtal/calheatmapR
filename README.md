@@ -1,7 +1,7 @@
 calheatmapR
 ===========
 
-The `calheatmapR` package is (a work in progress) an R interface for the [cal-heatmap](https://github.com/kamisama/cal-heatmap) Javascript charting library, which is used to
+The `calheatmapR` package is an R interface for the [cal-heatmap](https://github.com/kamisama/cal-heatmap) Javascript charting library, which is used to
 
 > create calendar heatmaps to help visualise time series data, a la github contribution graph
 
