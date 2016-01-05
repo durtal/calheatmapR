@@ -5,7 +5,9 @@ The `calheatmapR` package is (a work in progress) an R interface for the [cal-he
 
 > create calendar heatmaps to help visualise time series data, a la github contribution graph
 
-The package owes everything to the creators of the R package [`htmlwidgets`](http://www.htmlwidgets.org/) ([repo](https://github.com/ramnathv/htmlwidgets)), Ramnath Vaidyanathan and JJ Alaire, as well as the RStudio team.  And to [@timelyportfolio](https://twitter.com/timelyportfolio) who has created a huge amount of htmlwidgets, be sure to check out his site [buildingwidgets](http://www.buildingwidgets.com/).  This is my first htmlwidget package and at the moment it is a bit limited and doesn't replicate everything that the Javascript library does, see the To Do section below.
+The package owes everything to the creators of the R package [`htmlwidgets`](http://www.htmlwidgets.org/) ([repo](https://github.com/ramnathv/htmlwidgets)), Ramnath Vaidyanathan and JJ Alaire, as well as the RStudio team.  And to [@timelyportfolio](https://twitter.com/timelyportfolio) who has created a huge amount of htmlwidgets, be sure to check out his site [buildingwidgets](http://www.buildingwidgets.com/).  This is my first htmlwidget package and at the moment it is a bit limited and doesn't replicate everything that the Javascript library does.
+
+There are options of the cal-heatmap Javascript library that aren't yet available in this package, these are the options which add more interactive elements to a calendar heatmap.  Things such as `next` and `previous` to scroll through the timeseries, or the `onClick` event, the majority can be found in the [Methods](https://kamisama.github.io/cal-heatmap/#methods) and [Events](https://kamisama.github.io/cal-heatmap/#events) sections on the cal-heatmap homepage.  **However, this package isn't under active development.**
 
 Help pages can be found [here](http://durtal.github.io/calheatmapR/), as mentioned in those pages, I am unsure how a calheatmapR plot will work in a shiny app in which the data is updated.
 
@@ -67,7 +69,3 @@ calheatmapR(data = demoData) %>%
     chDomain(domain = "month", subDomain = "day", start = "2000-12-01", range = 5)
 ```
 ![](chDomain-cal-heatmap.jpg)
-
-### To Do
-
-There are options of the cal-heatmap Javascript library that aren't yet available in this package, these are the options which add more interactive elements to a calendar heatmap.  Things such as `next` and `previous` to scroll through the timeseries, or the `onClick` event, the majority can be found in the [Methods](https://kamisama.github.io/cal-heatmap/#methods) and [Events](https://kamisama.github.io/cal-heatmap/#events) sections on the cal-heatmap homepage.
