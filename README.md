@@ -58,7 +58,7 @@ The `calheatmapR` function initialises a cal-heatmap plot, with default options,
 ```R
 calheatmapR(data = demoData)
 ```
-![](default-cal-heatmap.jpg)
+![](https://raw.githubusercontent.com/durtal/calheatmapR/gh-pages/default-cal-heatmap.jpg)
 
 Following a similar convention to the [dygraphs](http://rstudio.github.io/dygraphs/) package developed by RStudio, the `calheatmapR` package allows further customisation of a calendar heatmap; this customisation is, more often than not, required.
 
@@ -68,4 +68,4 @@ There are three supplementary functions to customise a plot, these are `chDomain
 calheatmapR(data = demoData) %>%
     chDomain(domain = "month", subDomain = "day", start = "2000-12-01", range = 5)
 ```
-![](chDomain-cal-heatmap.jpg)
+![](https://raw.githubusercontent.com/durtal/calheatmapR/gh-pages/chDomain-cal-heatmap.jpg)
