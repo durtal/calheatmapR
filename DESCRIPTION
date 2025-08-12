@@ -11,4 +11,6 @@ License: MIT
 LazyData: TRUE
 Imports:
     magrittr,
-    htmlwidgets (>= 0.3.2),
+    htmlwidgets (>= 0.3.2)
+Suggests:
+    testthat (>= 3.0.0)
